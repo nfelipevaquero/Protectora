@@ -1,189 +1,210 @@
+/* --- VARIABLES --- */
 :root {
-  --bg: #ffffff;
-  --muted: #6b7280;
-  --accent: #2b8a78;
-  --accent-2: #114b8b;
-  --card: #f8fafc;
+  --primary: #2b8a78;
+  --secondary: #114b8b;
+  --light: #e0f7f4;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --white: #ffffff;
   --radius: 12px;
-  --container: 1100px;
-  --btn-bg: #2b8a78;
-  --btn-hover: #114b8b;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* --- RESET & BASE --- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
-  height: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  color: #0b1220;
-  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--white);
 }
 
-/* Header */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- HEADER --- */
+.site-header {
+  padding: 10px 0;
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
 .header-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
-  flex-wrap: wrap;
+  align-items: center;
 }
+
 .brand {
   display: flex;
-  gap: 12px;
   align-items: center;
+  gap: 15px;
 }
+
 .logo {
-  width: 64px;
-  height: 64px;
+  width: 55px;
+  height: 55px;
   object-fit: contain;
 }
+
+.brand h1 {
+  font-size: 1.4rem;
+  color: var(--secondary);
+}
+
 .main-nav a {
   margin: 0 12px;
-  color: var(--muted);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  color: var(--secondary);
+  font-weight: 600;
+  transition: 0.3s;
 }
+
 .main-nav a:hover {
-  color: var(--accent-2);
+  color: var(--primary);
 }
-.controls button {
-  background: var(--accent);
-  color: #fff;
+
+/* --- BOTÓN IDIOMA (Lógica Inversa) --- */
+#langBtn {
+  background: var(--primary);
+  color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: var(--radius);
+  padding: 8px 18px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background 0.3s;
-}
-.controls button:hover {
-  background: var(--accent-2);
+  font-weight: bold;
 }
 
-/* Main */
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Hero fullscreen */
+/* --- HERO --- */
 .hero {
-  flex: 1;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
+  background: linear-gradient(135deg, var(--light) 0%, #ffffff 100%);
+  padding: 60px 0;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   align-items: center;
-  text-align: center;
-  padding: 40px 20px;
-  min-height: 100vh;
-  gap: 24px;
-  background: linear-gradient(to bottom, #e0f7f4, #ffffff);
 }
-.hero-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
-}
-.hero-content p {
-  font-size: 1.2rem;
-  color: var(--muted);
-  max-width: 600px;
-}
+
 .hero-img {
   width: 100%;
-  max-width: 400px;
-  border-radius: 16px;
-  object-fit: cover;
-}
-.btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 24px;
-  background: var(--btn-bg);
-  color: #fff;
   border-radius: var(--radius);
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-.btn:hover {
-  background: var(--btn-hover);
+  box-shadow: var(--shadow);
 }
 
-/* Sections */
+/* --- SECCIONES --- */
 .section {
-  padding: 60px 24px;
+  padding: 40px 0; /* Padding reducido para evitar espacios muertos */
 }
-.stories-grid, .testimonial-grid {
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--secondary);
+  margin-bottom: 25px;
+}
+
+/* --- IFRAME (SOLUCIÓN ESPACIO EN BLANCO) --- */
+#petsFrame {
+  width: 100%;
+  height: 420px; /* Altura ajustada para eliminar el vacío bajo las fotos */
+  border: none;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* --- VOLUNTARIADO --- */
+.volunteer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-top: 24px;
+  gap: 20px;
 }
 
-/* Mascotas */
-.pet-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
-}
-.pet-card {
-  background: var(--card);
-  padding: 12px;
+.v-card {
+  background: #f9fafb;
+  padding: 25px;
   border-radius: var(--radius);
-  box-shadow: 0 6px 18px rgba(12, 20, 30, 0.06);
-  cursor: pointer;
+  border-left: 5px solid var(--primary);
 }
-.pet-card img {
+
+/* --- CONTACTO --- */
+.contact-box {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--light);
+  padding: 40px;
+  border-radius: var(--radius);
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+input, textarea {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
+  padding: 12px;
+  border: 1px solid #ccc;
   border-radius: 8px;
 }
-.pet-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 8px;
-}
 
-/* Stories/Testimonials */
-.story, .testimonial {
-  background: var(--card);
-  padding: 16px;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(12, 20, 30, 0.05);
-}
-.testimonial strong {
-  display: block;
-  margin-top: 8px;
-  color: var(--accent);
-}
-
-/* Footer */
-.site-footer {
-  background: #f3f6f8;
-  padding: 24px;
+/* --- BOTONES --- */
+.btn {
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
   text-align: center;
 }
 
-/* Responsive */
-@media(min-width: 720px) {
-  .hero {
-    flex-direction: row;
-    text-align: left;
-    gap: 60px;
-    padding: 80px 40px;
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+/* --- FOOTER --- */
+.site-footer {
+  padding: 30px 0;
+  text-align: center;
+  background: #f3f4f6;
+  color: var(--text-muted);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero-layout, .contact-form {
+    grid-template-columns: 1fr;
+  }
+  .full-width {
+    grid-column: span 1;
+  }
+  #petsFrame {
+    height: 850px; /* Más altura en móvil porque las fotos se apilan */
   }
 }

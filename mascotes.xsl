@@ -1,68 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<xsl:output method="html" indent="yes"/>
-
 <xsl:template match="/">
   <html>
   <head>
-    <meta charset="UTF-8"/>
-    <title>Animals disponibles</title>
-    <link rel="stylesheet" href="styles.css"/>
     <style>
-      /* Tarjetas de mascotes */
-      .pet-card {
+      body { 
+        font-family: 'Inter', sans-serif; 
+        margin: 0; 
+        display: flex; 
+        justify-content: center; 
+        background: transparent; 
+      }
+      .pet-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+        gap: 20px; 
+        width: 100%; 
+        padding: 10px;
+      }
+      .pet-card { 
+        background: white; 
+        border-radius: 15px; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        overflow: hidden; 
+        text-align: center;
         display: flex;
         flex-direction: column;
-        border-radius: 12px;
-        overflow: hidden;
-        background: #f8fafc;
-        box-shadow: 0 6px 18px rgba(12,20,30,0.06);
+        height: fit-content; /* CORRECCIÓN: La tarjeta solo ocupa lo que necesita */
+        border: 1px solid #eee;
       }
-
-      /* Imagen rectangular más alta */
-      .pet-card img {
-        width: 100%;
-        height: 350px;
-        object-fit: cover;
-        display: block;
+      .pet-card img { 
+        width: 100%; 
+        height: 200px; 
+        object-fit: cover; 
       }
-
-      .pet-card h4 {
-        margin: 12px;
-        font-size: 1.2rem;
+      .pet-info { 
+        padding: 15px; 
+        background: #fff;
       }
-
-      .pet-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 12px 12px 12px;
-        font-size: 0.95rem;
-        color: #6b7280;
-      }
-
-
-      @media (max-width: 720px) {
-        .pet-card img {
-          height: 250px;
-        }
-      }
+      h4 { margin: 0 0 5px 0; color: #114b8b; font-size: 1.2rem; }
+      .meta { font-size: 0.85rem; color: #666; font-weight: 400; }
     </style>
   </head>
   <body>
     <div class="pet-grid">
       <xsl:for-each select="mascotes/mascota">
         <div class="pet-card">
-          <img>
-            <xsl:attribute name="src">images/pets/<xsl:value-of select="@id"/>.jpg</xsl:attribute>
-            <xsl:attribute name="alt"><xsl:value-of select="nom"/></xsl:attribute>
-          </img>
-          <h4><xsl:value-of select="nom"/></h4>
-          <div class="pet-meta">
-            <span>
+          <img src="images/pets/{@id}.jpg" alt="{nom}"/>
+          <div class="pet-info">
+            <h4><xsl:value-of select="nom"/></h4>
+            <div class="meta">
               <xsl:value-of select="especie"/> · <xsl:value-of select="raca"/>
-            </span>
-            <strong><xsl:value-of select="dataNaixement"/></strong>
+            </div>
           </div>
         </div>
       </xsl:for-each>
