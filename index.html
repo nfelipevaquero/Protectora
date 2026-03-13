@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Paws & Care - Protectora</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Protectora d'animals Paws & Care - adopcions, històries d'èxit i fitxes de mascotes.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/logo.jpeg" alt="Paws & Care" class="logo">
+        <div>
+          <h1>Paws & Care</h1>
+          <p class="tagline">Protegim vides. Busquem llar.</p>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#inici" data-i18n-nav="home">Inici</a>
+        <a href="#adopta" data-i18n-nav="adopt">Adopta</a>
+        <a href="#histories" data-i18n-nav="stories">Històries d'èxit</a>
+        <a href="#voluntariat" data-i18n-nav="volunteer">Voluntariat</a>
+        <a href="#testimonis" data-i18n-nav="testimonials">Testimonis</a>
+      </nav>
+
+      <div class="controls">
+        <button id="langBtn" aria-label="Canvia idioma">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero fullscreen -->
+    <section id="inici" class="hero container">
+      <div class="hero-content">
+        <h2 id="hero-title" data-i18n="heroTitle">Benvinguts a Paws & Care</h2>
+        <p id="hero-desc" data-i18n="heroDesc">
+          Som una protectora dedicada a cuidar i trobar famílies per animals en necessitat. La nostra missió és promoure adopcions responsables i el benestar animal.
+        </p>
+        <div class="events">
+          <h3 id="events-title" data-i18n="eventsTitle">Propers esdeveniments</h3>
+          <ul>
+            <li data-i18n="event1">Fira d'adopcions — 12 juny 2025</li>
+            <li data-i18n="event2">Campanya de vacunació gratuïta — 20 juliol 2025</li>
+          </ul>
+        </div>
+        <a href="#adopta" class="btn">Adopta ara</a>
+      </div>
+      <img src="images/hero-pets.jpg" alt="Mascotes" class="hero-img">
+    </section>
+
+    <!-- Adopta -->
+    <section id="adopta" class="container section">
+      <h2 data-i18n="adoptTitle">Adopta</h2>
+      <p data-i18n="adoptDesc">Animals disponibles per a adopció (dades extretes via XSLT).</p>
+      <iframe id="petsFrame" src="mascotes.xml" style="width:100%;border:none;height:800px" title="Llistat de mascotes"></iframe>
+    </section>
+
+    <!-- Histories d'èxit -->
+    <section id="histories" class="container section">
+      <h2 data-i18n="storiesTitle">Històries d'èxit</h2>
+      <div class="stories-grid">
+        <article class="story">
+          <h3>Laia & Rocky</h3>
+          <p>"Adoptar en Rocky ha estat la millor decisió. Va arribar poruc i ara és part de la família."</p>
+        </article>
+        <article class="story">
+          <h3>Marc & Luna</h3>
+          <p>"La Luna s'ha adaptat perfectament. El suport de Paws & Care va ser excel·lent."</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Voluntariat -->
+    <section id="voluntariat" class="container section">
+      <h2>Voluntariat</h2>
+      <p>Uneix-te al nostre equip de voluntaris i ajuda a millorar la vida dels animals.</p>
+      <ul>
+        <li>Atenció i cura d'animals a la protectora</li>
+        <li>Suport en esdeveniments d'adopció</li>
+        <li>Campanyes de sensibilització i recollida de fons</li>
+      </ul>
+      <a href="contacte.html" class="btn">Apunta't com a voluntari</a>
+    </section>
+
+    <!-- Testimonis -->
+    <section id="testimonis" class="container section">
+      <h2>Testimonis</h2>
+      <div class="testimonial-grid">
+        <article class="testimonial">
+          <p>"Paws & Care ens va ajudar a trobar el nostre gos ideal, i van fer tot el procés fàcil i afectuós."</p>
+          <strong>— Anna & Toby</strong>
+        </article>
+        <article class="testimonial">
+          <p>"Gràcies a Paws & Care, la meva gossa ha trobat una llar plena d'amor. Recomano a tothom adoptar!"</p>
+          <strong>— Jordi & Maya</strong>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>Paws & Care</h4>
+        <p>Carrer de l'Amor 12 · Tel. 600 000 000 · info@pawsandcare.org</p>
+      </div>
+      <div class="social">
+        <small>© 2025 Paws & Care</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

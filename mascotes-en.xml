@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="mascotes-en.xsl"?>
+<mascotes>
+  <mascota id="001">
+    <nom>Rocky</nom>
+    <especie>Dog</especie>
+    <raca>Labrador</raca>
+    <dataNaixement>2021-03-15</dataNaixement>
+  </mascota>
+
+  <mascota id="002">
+    <nom>Luna</nom>
+    <especie>Cat</especie>
+    <raca>Siamese</raca>
+    <dataNaixement>2020-07-22</dataNaixement>
+  </mascota>
+
+  <mascota id="003">
+    <nom>Max</nom>
+    <especie>Dog</especie>
+    <raca>Golden Retriever</raca>
+    <dataNaixement>2019-11-05</dataNaixement>
+  </mascota>
+</mascotes>

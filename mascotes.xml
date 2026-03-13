@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="mascotes.xsl"?>
+<mascotes>
+    <mascota id="001" sexe="Mascle" tipusCabell="Curt">
+        <nom>Rocky</nom>
+        <especie>Gos</especie>
+        <raca>Labrador Retriever</raca>
+        <color>Groc</color>
+        <dataNaixement>2020-03-15</dataNaixement>
+        <propietari>
+            <nomPropietari>Anna Puig</nomPropietari>
+            <telefon>612345678</telefon>
+        </propietari>
+        <vacunes>
+            <vacuna laboratori="Zoetis">
+                <nomVacuna>Ràbia</nomVacuna>
+                <data>2024-04-10</data>
+            </vacuna>
+            <vacuna>
+                <nomVacuna>Moquillo</nomVacuna>
+                <data>2024-04-10</data>
+            </vacuna>
+        </vacunes>
+        <visites>
+            <visita id="V001">
+                <data>2024-05-12</data>
+                <motiu>Revisió anual</motiu>
+                <veterinari>Dr. Martí Vila</veterinari>
+                <idMascota>001</idMascota>
+            </visita>
+        </visites>
+    </mascota>
+
+    <mascota id="002" sexe="Femella" tipusCabell="Llarg">
+        <nom>Luna</nom>
+        <especie>Gat</especie>
+        <raca>Persa</raca>
+        <dataNaixement>2019-09-08</dataNaixement>
+        <propietari>
+            <nomPropietari>Jordi Serra</nomPropietari>
+            <telefon>698765432</telefon>
+        </propietari>
+        <vacunes>
+            <vacuna laboratori="Virbac">
+                <nomVacuna>Trivalente felina</nomVacuna>
+                <data>2024-03-22</data>
+            </vacuna>
+        </vacunes>
+        <visites>
+            <visita id="V002">
+                <data>2024-08-02</data>
+                <motiu>Vacunació</motiu>
+                <veterinari>Dra. Carla Rius</veterinari>
+                <idMascota>002</idMascota>
+            </visita>
+        </visites>
+    </mascota>
+
+    <mascota id="003" sexe="Mascle" tipusCabell="Sense">
+        <nom>Kiwi</nom>
+        <especie>Llangardaix</especie>
+        <raca>Gecko</raca>
+        <dataNaixement>2022-01-10</dataNaixement>
+        <propietari>
+            <nomPropietari>Laura Camps</nomPropietari>
+            <telefon>677889900</telefon>
+        </propietari>
+        <vacunes/>
+        <visites>
+            <visita id="V003">
+                <data>2024-09-15</data>
+                <motiu>Control d’alimentació</motiu>
+                <veterinari>Dr. Toni Bosch</veterinari>
+                <idMascota>003</idMascota>
+            </visita>
+        </visites>
+    </mascota>
+</mascotes>
+
+
